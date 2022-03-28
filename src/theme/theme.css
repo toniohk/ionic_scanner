@@ -1,0 +1,32 @@
+:root {
+    --ion-toolbar-background: var(--ion-color-primary);
+    --ion-tab-bar-background: var(--ion-color-primary);
+    --ion-tab-bar-color-selected: var(--ion-color-secondary);
+    --ion-tab-bar-color: var(--ion-color-primary-contrast);
+    --ion-toolbar-color: var(--ion-color-primary-contrast);
+  }
+
+  #LineItemGrid {
+    border: 1px solid;
+  }
+  #GridHeader {
+    border: 1px  solid;
+    font-weight: bold;
+  }
+
+  .picked {
+    background-color: green;
+  }
+
+  .notpicked {
+    background-color: red;
+  }
+
+
+
+  /* ion-grid {
+    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+  } */
