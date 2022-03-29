@@ -14,11 +14,13 @@ import {
   moveOutline,
   busOutline,
   giftOutline,
+  checkmarkDoneCircleOutline,
 } from "ionicons/icons";
 
 import Deliver from "./Deliver";
 import Lookup from "./Lookup";
 import Move from "./Move";
+import Quality from "./Quality";
 import Receive from "./Receive";
 import Ship from "./Ship";
 
@@ -32,6 +34,7 @@ const MainTabs: React.FC = () => {
         <Route path="/Main/Move" component={Move} exact={true} />
         <Route path="/Main/Ship" component={Ship} exact={true} />
         <Route path="/Main/Deliver" component={Deliver} exact={true} />
+        <Route path="/Main/Quality" component={Quality} exact={true} />
       </IonRouterOutlet>
 
       <IonTabBar slot="bottom">
@@ -54,6 +57,10 @@ const MainTabs: React.FC = () => {
         <IonTabButton tab="ship" href="/Main/Ship">
           <IonIcon icon={busOutline} />
           <IonLabel>Ship</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="quality" href="/Main/Quality">
+          <IonIcon icon={checkmarkDoneCircleOutline} />
+          <IonLabel>Quality</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
