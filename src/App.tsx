@@ -1,9 +1,11 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import ApplicationContextProvider from "./data/ApplicationContextProvider";
 
 import Login from "./pages/Login";
+import MainTabs from "./pages/MainTabs";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -25,14 +27,24 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import "./theme/theme.css";
 import MainSidePanel from "./components/MainSidePanel";
+import ApplicationContext from "./data/application-context";
 
 const App: React.FC = () => {
+  const applicationCtx = useContext(ApplicationContext);
+
+  const { initContext } = applicationCtx;
+  useEffect(() => {
+    initContext();
+  }, [initContext]);
+
   return (
     <IonApp>
       <IonReactRouter>
         <MainSidePanel />
         <IonRouterOutlet id="main">
           <Route path="/Login" component={Login} exact={true} />
+          <Route path="/Main" component={MainTabs} />
+          <Redirect path="/" to="/Login" exact={true} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
